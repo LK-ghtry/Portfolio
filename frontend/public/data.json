@@ -1,0 +1,415 @@
+﻿{
+    "timeline":  {
+                     "value":  [
+                                   {
+                                       "badge_text":  null,
+                                       "category":  "experience",
+                                       "description":  "负责AIGC视频产品“探光”的内容质量管控模块，专项负责AI生成画面失真问题，系统整理问题案例与复现规律，形成结构化反馈文档；推动产品侧更新内容生成规则，同步承担prompt优化工作\n作为快手平台全链路负责人，主导确立账号内容调性，联动算法团队开发自动分发机制\n千万级粉丝微信公众号“安逸花”运营，累计发布推文62篇，阅读量100万+",
+                                       "end_date":  "2025.12",
+                                       "id":  3,
+                                       "is_current":  false,
+                                       "sort_order":  2,
+                                       "start_date":  "2025.09",
+                                       "subtitle":  "AI产品运营实习生",
+                                       "title":  "马上消费金融有限公司（已上市）"
+                                   },
+                                   {
+                                       "badge_text":  null,
+                                       "category":  "education",
+                                       "description":  "",
+                                       "end_date":  "2027.06",
+                                       "id":  1,
+                                       "is_current":  false,
+                                       "sort_order":  1,
+                                       "start_date":  "2024.09",
+                                       "subtitle":  "新闻与传播 · 硕士研究生",
+                                       "title":  "四川大学"
+                                   },
+                                   {
+                                       "badge_text":  null,
+                                       "category":  "experience",
+                                       "description":  "独立负责公众号全流程运营、活动策划、推文创作、招投标项目书撰写等，实现百万级内容传播",
+                                       "end_date":  "2023.08",
+                                       "id":  4,
+                                       "is_current":  false,
+                                       "sort_order":  1,
+                                       "start_date":  "2023.04",
+                                       "subtitle":  "新媒体运营",
+                                       "title":  "华西医院健康管理中心"
+                                   },
+                                   {
+                                       "badge_text":  null,
+                                       "category":  "education",
+                                       "description":  "",
+                                       "end_date":  "2022.06",
+                                       "id":  2,
+                                       "is_current":  false,
+                                       "sort_order":  0,
+                                       "start_date":  "2017.09",
+                                       "subtitle":  "预防医学 · 本科",
+                                       "title":  "四川大学"
+                                   },
+                                   {
+                                       "badge_text":  null,
+                                       "category":  "experience",
+                                       "description":  "百家号“多特体育”通过内容风格打磨与标题策略优化持续获取算法流量，产出10万+阅读爆文12篇，粉丝增长2.1万\n个人体育垂类知乎账号，单平台粉丝超6000+，累计阅读量突破100万+",
+                                       "end_date":  "2019.09",
+                                       "id":  5,
+                                       "is_current":  false,
+                                       "sort_order":  0,
+                                       "start_date":  "2018.02",
+                                       "subtitle":  "内容创作者",
+                                       "title":  "自媒体运营"
+                                   }
+                               ],
+                     "Count":  5
+                 },
+    "personal":  {
+                     "avatar_path":  null,
+                     "bio":  "具备AIGC内容产品的完整实战经验，擅长发现问题并推动产品改进。跨学科背景（医学+传播+AI）有助于同时理解用户、内容与技术三端逻辑。情绪稳定，抗压能力强，善于在复杂环境下协调资源、高效推动目标达成。",
+                     "career_goal":  "AI产品运营、产品运营、内容运营",
+                     "email":  "Liguokuan24@163.com",
+                     "github_url":  "https://github.com/",
+                     "id":  1,
+                     "linkedin_url":  "https://linkedin.com/in/",
+                     "location":  "深圳市",
+                     "name_cn":  "",
+                     "name_en":  "Li Guokuan",
+                     "phone":  "13032872890",
+                     "resume_path":  null,
+                     "subtitle":  "AI产品运营 / 内容运营 / 产品运营",
+                     "title":  "AI Product Operations",
+                     "twitter_url":  "",
+                     "wechat_qr_path":  null
+                 },
+    "guestbook":  {
+                      "value":  [
+                                    {
+                                        "author_name":  "访客",
+                                        "created_at":  "2026-05-11T15:31:45.812412",
+                                        "id":  1,
+                                        "message":  "很棒的网站！祝你求职顺利~"
+                                    }
+                                ],
+                      "Count":  1
+                  },
+    "projects":  {
+                     "value":  [
+                                   {
+                                       "category":  "AI/ML",
+                                       "featured":  true,
+                                       "full_description":  "介绍待补充",
+                                       "github_url":  null,
+                                       "id":  4,
+                                       "image_path":  "/images/人机之恋.png",
+                                       "live_url":  null,
+                                       "short_description":  "标题待补充",
+                                       "sort_order":  3,
+                                       "title":  "人机之恋"
+                                   },
+                                   {
+                                       "category":  "AI/ML",
+                                       "featured":  true,
+                                       "full_description":  "牵头完成团队组建与任务分工，主导开发“地方文脉与诗歌元宇宙”网站。项目融合AI技术与传统文化，构建了诗歌与地方文脉的数字化展示平台。",
+                                       "github_url":  null,
+                                       "id":  1,
+                                       "image_path":  "/images/诗歌元宇宙.jpg",
+                                       "live_url":  "",
+                                       "short_description":  "牵头完成团队组建与任务分工，主导开发“地方文脉与诗歌元宇宙”网站",
+                                       "sort_order":  2,
+                                       "title":  "《“AI”上唐宋，文脉中国》研究生全国双创大赛"
+                                   },
+                                   {
+                                       "category":  "Research",
+                                       "featured":  true,
+                                       "full_description":  "独立领导关于AI聊天机器人音色如何影响人类信任度的前沿研究，构建了从理论到实证的完整研究链路，包括系统梳理100+篇英文文献综述，设计执行60人次脑电实验，综合运用Python、Matlab、SPSS等工具，完成了从实验编程、数据采集到统计分析的全过程。",
+                                       "github_url":  null,
+                                       "id":  2,
+                                       "image_path":  "/images/AI语音.png",
+                                       "live_url":  null,
+                                       "short_description":  "独立领导关于AI聊天机器人音色如何影响人类信任度的前沿研究",
+                                       "sort_order":  1,
+                                       "title":  "AI语音信任神经机制研究"
+                                   },
+                                   {
+                                       "category":  "Research",
+                                       "featured":  false,
+                                       "full_description":  "省级特等奖。负责两轮调研的数据分析（68场访谈+4000份问卷），为研究框架的搭建与迭代提供关键方向。",
+                                       "github_url":  null,
+                                       "id":  3,
+                                       "image_path":  "/images/靠谱的中国诗.png",
+                                       "live_url":  null,
+                                       "short_description":  "省级特等奖 · 负责两轮调研的数据分析（68场访谈+4000份问卷）",
+                                       "sort_order":  0,
+                                       "title":  "《靠“谱”的中国诗》大学生“挑战杯”"
+                                   }
+                               ],
+                     "Count":  4
+                 },
+    "playlists":  {
+                      "value":  [
+                                    {
+                                        "id":  1,
+                                        "link_url":  "https://y.qq.com/n/ryqq_v2/playlist/9290406286?ADTAG=h5_share_playlist\u0026redirecttag=mn.redirect.custom\u0026mnst=1.68",
+                                        "platform":  "QQ音乐",
+                                        "sort_order":  0,
+                                        "title":  "工作专注 Deep Focus"
+                                    },
+                                    {
+                                        "id":  2,
+                                        "link_url":  "",
+                                        "platform":  "QQ音乐",
+                                        "sort_order":  1,
+                                        "title":  "通勤路上 Commute Vibes"
+                                    }
+                                ],
+                      "Count":  2
+                  },
+    "skills":  {
+                   "value":  [
+                                 {
+                                     "category":  "programming",
+                                     "id":  1,
+                                     "is_marquee":  true,
+                                     "name":  "Python",
+                                     "sort_order":  0
+                                 },
+                                 {
+                                     "category":  "programming",
+                                     "id":  2,
+                                     "is_marquee":  true,
+                                     "name":  "Matlab",
+                                     "sort_order":  1
+                                 },
+                                 {
+                                     "category":  "tools",
+                                     "id":  3,
+                                     "is_marquee":  true,
+                                     "name":  "SPSS",
+                                     "sort_order":  2
+                                 },
+                                 {
+                                     "category":  "tools",
+                                     "id":  4,
+                                     "is_marquee":  true,
+                                     "name":  "AMOS",
+                                     "sort_order":  3
+                                 },
+                                 {
+                                     "category":  "tools",
+                                     "id":  5,
+                                     "is_marquee":  true,
+                                     "name":  "Neuroscan",
+                                     "sort_order":  4
+                                 },
+                                 {
+                                     "category":  "tools",
+                                     "id":  6,
+                                     "is_marquee":  true,
+                                     "name":  "MS Office",
+                                     "sort_order":  5
+                                 },
+                                 {
+                                     "category":  "AI",
+                                     "id":  7,
+                                     "is_marquee":  true,
+                                     "name":  "Prompt Engineering",
+                                     "sort_order":  6
+                                 },
+                                 {
+                                     "category":  "AI",
+                                     "id":  8,
+                                     "is_marquee":  true,
+                                     "name":  "AIGC",
+                                     "sort_order":  7
+                                 },
+                                 {
+                                     "category":  "marketing",
+                                     "id":  9,
+                                     "is_marquee":  true,
+                                     "name":  "新媒体运营",
+                                     "sort_order":  8
+                                 },
+                                 {
+                                     "category":  "general",
+                                     "id":  10,
+                                     "is_marquee":  true,
+                                     "name":  "数据分析",
+                                     "sort_order":  9
+                                 },
+                                 {
+                                     "category":  "general",
+                                     "id":  11,
+                                     "is_marquee":  true,
+                                     "name":  "内容创作",
+                                     "sort_order":  10
+                                 }
+                             ],
+                   "Count":  11
+               },
+    "travel-photos":  {
+                          "value":  [
+                                        {
+                                            "caption":  "旅行照片待补充",
+                                            "country":  "中国",
+                                            "id":  1,
+                                            "image_path":  "",
+                                            "sort_order":  0
+                                        },
+                                        {
+                                            "caption":  "中国旅行照片 1",
+                                            "country":  "中国",
+                                            "id":  2,
+                                            "image_path":  "/images/photot-中国-1.jpg",
+                                            "sort_order":  0
+                                        },
+                                        {
+                                            "caption":  "中国旅行照片 2",
+                                            "country":  "中国",
+                                            "id":  3,
+                                            "image_path":  "/images/photo-中国-2.jpg",
+                                            "sort_order":  1
+                                        }
+                                    ],
+                          "Count":  3
+                      },
+    "certifications":  {
+                           "value":  [
+                                         {
+                                             "date":  "500+分",
+                                             "icon":  "🌐",
+                                             "id":  1,
+                                             "issuer":  "教育部",
+                                             "sort_order":  0,
+                                             "title":  "大学英语六级 (CET-6)",
+                                             "url":  null
+                                         },
+                                         {
+                                             "date":  "",
+                                             "icon":  "🗣",
+                                             "id":  2,
+                                             "issuer":  "国家语言文字工作委员会",
+                                             "sort_order":  1,
+                                             "title":  "普通话二级甲等",
+                                             "url":  null
+                                         },
+                                         {
+                                             "date":  "",
+                                             "icon":  "💻",
+                                             "id":  3,
+                                             "issuer":  "教育部",
+                                             "sort_order":  2,
+                                             "title":  "全国计算机二级",
+                                             "url":  null
+                                         },
+                                         {
+                                             "date":  "",
+                                             "icon":  "🎓",
+                                             "id":  4,
+                                             "issuer":  "四川大学",
+                                             "sort_order":  3,
+                                             "title":  "校级学业奖学金",
+                                             "url":  null
+                                         }
+                                     ],
+                           "Count":  4
+                       },
+    "interests":  {
+                      "value":  [
+                                    {
+                                        "description":  "关注前沿AI项目与技术趋势，持续学习与探索",
+                                        "icon_color":  "#333",
+                                        "icon_name":  "Github",
+                                        "id":  1,
+                                        "link_text":  "访问主页",
+                                        "link_url":  "https://github.com/",
+                                        "sort_order":  0,
+                                        "title":  "GitHub"
+                                    },
+                                    {
+                                        "description":  "保持阅读习惯，关注科技与人文交叉领域的内容创作",
+                                        "icon_color":  "#8B4513",
+                                        "icon_name":  "BookOpen",
+                                        "id":  2,
+                                        "link_text":  "进入阅读",
+                                        "link_url":  "/writing",
+                                        "sort_order":  1,
+                                        "title":  "阅读与写作"
+                                    },
+                                    {
+                                        "description":  "热爱音乐，常听电子、独立与华语流行",
+                                        "icon_color":  "#e60012",
+                                        "icon_name":  "Music",
+                                        "id":  3,
+                                        "link_text":  "进入歌单",
+                                        "link_url":  "/music-playlist",
+                                        "sort_order":  2,
+                                        "title":  "音乐"
+                                    }
+                                ],
+                      "Count":  3
+                  },
+    "writings":  {
+                     "value":  [
+                                   {
+                                       "description":  "GitHub 开源项目阅读",
+                                       "id":  3,
+                                       "platform":  "GitHub",
+                                       "sort_order":  2,
+                                       "title":  "Claude Code PM Course",
+                                       "url":  "https://github.com/carlvellotti/claude-code-pm-course"
+                                   },
+                                   {
+                                       "description":  "小红书阅读分享",
+                                       "id":  2,
+                                       "platform":  "小红书",
+                                       "sort_order":  1,
+                                       "title":  "小红书笔记",
+                                       "url":  "https://www.xiaohongshu.com/explore/69ec33d2000000002301ddac?app_platform=android\u0026ignoreEngage=true\u0026app_version=9.28.1\u0026share_from_user_hidden=true\u0026xsec_source=app_share\u0026type=normal\u0026xsec_token=CB3kJm_hrZQ5Nnn8P6Vv2UnU9O2F1SREb5oNUSfluxvoo=\u0026author_share=1\u0026xhsshare=\u0026shareRedId=ODg5N0lJRj42NzUyOTgwNjg0OTk8PTZL\u0026apptime=1778577208\u0026share_id=7c937ffd36e548a2b0ada0e5dd2245d4\u0026share_channel=wechat"
+                                   },
+                                   {
+                                       "description":  "知乎问题回答",
+                                       "id":  1,
+                                       "platform":  "知乎",
+                                       "sort_order":  0,
+                                       "title":  "知乎回答",
+                                       "url":  "https://www.zhihu.com/question/616604516/answer/3523507754?share_code=8e5oOLFI3dlp\u0026utm_psn=2037588264547258923"
+                                   }
+                               ],
+                     "Count":  3
+                 },
+    "travel-countries":  {
+                             "value":  [
+                                           "中国"
+                                       ],
+                             "Count":  1
+                         },
+    "competitions":  {
+                         "value":  [
+                                       {
+                                           "award":  "省级特等奖",
+                                           "date":  "2025",
+                                           "icon":  "🏆",
+                                           "id":  1,
+                                           "sort_order":  1,
+                                           "title":  "《靠“谱”的中国诗》大学生“挑战杯”"
+                                       },
+                                       {
+                                           "award":  "参赛",
+                                           "date":  "2025",
+                                           "icon":  "🎯",
+                                           "id":  2,
+                                           "sort_order":  0,
+                                           "title":  "《“AI”上唐宋，文脉中国》双创大赛"
+                                       }
+                                   ],
+                         "Count":  2
+                     },
+    "project-categories":  {
+                               "value":  [
+                                             "AI/ML",
+                                             "Research"
+                                         ],
+                               "Count":  2
+                           }
+}
