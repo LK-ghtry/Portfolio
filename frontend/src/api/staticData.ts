@@ -27,21 +27,35 @@ const pathMap: Record<string, string> = {
   '/project-categories': 'project-categories',
 };
 
+const BASE = '/Portfolio/';
+
+function fixImagePaths(obj: any): any {
+  if (!obj || typeof obj !== 'object') return obj;
+  if (Array.isArray(obj)) return obj.map(fixImagePaths);
+  const fixed: Record<string, any> = {};
+  for (const [key, val] of Object.entries(obj)) {
+    if (key === 'image_path' && typeof val === 'string' && val.startsWith('/images/')) {
+      fixed[key] = BASE + val.slice(1);
+    } else {
+      fixed[key] = fixImagePaths(val);
+    }
+  }
+  return fixed;
+}
+
 export async function getStaticData(path: string): Promise<any> {
   const data = await loadStaticData();
-  // Handle query params (e.g., /travel-photos?country=China)
   const basePath = path.split('?')[0];
   const key = pathMap[basePath];
   if (!key) return null;
-  const result = data[key];
+  let result = data[key];
 
-  // Handle country filter for travel-photos
   if (basePath === '/travel-photos' && path.includes('country=')) {
     const country = new URLSearchParams(path.split('?')[1] || '').get('country');
     if (country) {
       const photos = result?.value || result || [];
-      return photos.filter((p: any) => p.country === country);
+      return fixImagePaths(photos.filter((p: any) => p.country === country));
     }
   }
-  return result;
+  return fixImagePaths(result);
 }
