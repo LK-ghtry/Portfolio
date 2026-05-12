@@ -43,6 +43,13 @@ function fixImagePaths(obj: any): any {
   return fixed;
 }
 
+function unwrapValue(result: any): any {
+  if (result && typeof result === 'object' && !Array.isArray(result) && 'value' in result) {
+    return result.value;
+  }
+  return result;
+}
+
 export async function getStaticData(path: string): Promise<any> {
   const data = await loadStaticData();
   const basePath = path.split('?')[0];
@@ -53,9 +60,10 @@ export async function getStaticData(path: string): Promise<any> {
   if (basePath === '/travel-photos' && path.includes('country=')) {
     const country = new URLSearchParams(path.split('?')[1] || '').get('country');
     if (country) {
-      const photos = result?.value || result || [];
-      return fixImagePaths(photos.filter((p: any) => p.country === country));
+      const photos = unwrapValue(result);
+      const filtered = Array.isArray(photos) ? photos.filter((p: any) => p.country === country) : photos;
+      return fixImagePaths(filtered);
     }
   }
-  return fixImagePaths(result);
+  return fixImagePaths(unwrapValue(result));
 }
