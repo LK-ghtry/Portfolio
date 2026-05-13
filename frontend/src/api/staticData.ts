@@ -5,7 +5,8 @@ let cachedData: Record<string, any> | null = null;
 
 async function loadStaticData(): Promise<Record<string, any>> {
   if (cachedData) return cachedData;
-  const resp = await fetch('/data.json');
+  const base = import.meta.env.BASE_URL;
+  const resp = await fetch(`${base}data.json`);
   cachedData = await resp.json();
   return cachedData!;
 }
@@ -27,15 +28,14 @@ const pathMap: Record<string, string> = {
   '/project-categories': 'project-categories',
 };
 
-const BASE = '/Portfolio/';
-
 function fixImagePaths(obj: any): any {
   if (!obj || typeof obj !== 'object') return obj;
   if (Array.isArray(obj)) return obj.map(fixImagePaths);
+  const base = import.meta.env.BASE_URL;
   const fixed: Record<string, any> = {};
   for (const [key, val] of Object.entries(obj)) {
     if (key === 'image_path' && typeof val === 'string' && val.startsWith('/images/')) {
-      fixed[key] = BASE + val.slice(1);
+      fixed[key] = base + val.slice(1);
     } else {
       fixed[key] = fixImagePaths(val);
     }
