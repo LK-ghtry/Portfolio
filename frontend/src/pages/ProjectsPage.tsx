@@ -7,7 +7,6 @@ import ScrollReveal from '../components/layout/ScrollReveal';
 import LoadingSpinner from '../components/shared/LoadingSpinner';
 
 export default function ProjectsPage() {
-  const [activeTab, setActiveTab] = useState<string>('All');
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const dragScroll = useDragScroll();
@@ -15,14 +14,8 @@ export default function ProjectsPage() {
   const { data: competitions, loading: cLoading } = useFetch<Competition[]>('/competitions');
   const { data: skills, loading: sLoading } = useFetch<Skill[]>('/skills');
   const { data: certifications, loading: certLoading } = useFetch<Certification[]>('/certifications');
-  const { data: categories } = useFetch<string[]>('/project-categories');
 
   if (pLoading || cLoading || sLoading || certLoading) return <LoadingSpinner />;
-
-  const allTabs = ['All', ...(categories || [])];
-  const filteredProjects = activeTab === 'All'
-    ? projects
-    : projects?.filter((p) => p.category === activeTab);
 
   return (
     <div style={{ paddingBottom: '6rem' }}>
@@ -36,26 +29,6 @@ export default function ProjectsPage() {
         </h2>
       </ScrollReveal>
 
-      {/* Tabs */}
-      <div style={{ flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', marginBottom: '3rem', display: 'flex' }}>
-        {allTabs.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className="tab-button"
-            style={{
-              color: tab === activeTab ? 'var(--heading-color)' : 'var(--text-secondary)',
-              fontWeight: tab === activeTab ? 800 : 600,
-              cursor: 'pointer', background: 'none', border: 'none',
-              padding: '0.5rem', fontFamily: 'inherit', fontSize: '1rem',
-              transition: 'all 0.3s',
-            }}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-
       {/* Project Cards */}
       <div
         ref={dragScroll.ref}
@@ -67,7 +40,7 @@ export default function ProjectsPage() {
           cursor: 'grab', userSelect: 'none',
         }}
       >
-        {filteredProjects?.map((project) => {
+        {projects?.map((project) => {
           const isHovered = hoveredId === project.id;
           const isDimmed = hoveredId !== null && hoveredId !== project.id;
 
@@ -150,7 +123,7 @@ export default function ProjectsPage() {
             </ScrollReveal>
           );
         })}
-        {(!filteredProjects || filteredProjects.length === 0) && (
+        {(!projects || projects.length === 0) && (
           <p style={{ color: 'var(--text-secondary)', textAlign: 'center', width: '100%' }}>暂无项目</p>
         )}
       </div>
