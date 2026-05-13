@@ -28,21 +28,6 @@ const pathMap: Record<string, string> = {
   '/project-categories': 'project-categories',
 };
 
-function fixImagePaths(obj: any): any {
-  if (!obj || typeof obj !== 'object') return obj;
-  if (Array.isArray(obj)) return obj.map(fixImagePaths);
-  const base = import.meta.env.BASE_URL;
-  const fixed: Record<string, any> = {};
-  for (const [key, val] of Object.entries(obj)) {
-    if (key === 'image_path' && typeof val === 'string' && val.startsWith('/images/')) {
-      fixed[key] = base + val.slice(1);
-    } else {
-      fixed[key] = fixImagePaths(val);
-    }
-  }
-  return fixed;
-}
-
 function unwrapValue(result: any): any {
   if (result && typeof result === 'object' && !Array.isArray(result) && 'value' in result) {
     return result.value;
@@ -62,8 +47,8 @@ export async function getStaticData(path: string): Promise<any> {
     if (country) {
       const photos = unwrapValue(result);
       const filtered = Array.isArray(photos) ? photos.filter((p: any) => p.country === country) : photos;
-      return fixImagePaths(filtered);
+      return filtered;
     }
   }
-  return fixImagePaths(unwrapValue(result));
+  return unwrapValue(result);
 }
