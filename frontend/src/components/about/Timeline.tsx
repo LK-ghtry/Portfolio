@@ -86,11 +86,14 @@ export default function Timeline() {
                           {item.description}
                         </p>
                       )}
-                      {item.link_url && (
+                      {item.link_url && (() => {
+                          const isExternal = item.link_url.startsWith('http');
+                          const href = isExternal ? item.link_url : `${import.meta.env.BASE_URL}${item.link_url.replace(/^\//, '')}`;
+                          return (
                         <a
-                          href={item.link_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          href={href}
+                          target={isExternal ? '_blank' : undefined}
+                          rel={isExternal ? 'noopener noreferrer' : undefined}
                           style={{
                             display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
                             marginTop: '0.5rem', color: 'var(--accent-color)',
@@ -100,7 +103,8 @@ export default function Timeline() {
                           <ExternalLink size={14} />
                           {item.link_text || '查看详情'}
                         </a>
-                      )}
+                        );
+                        })()}
                     </div>
                   </div>
                 </ScrollReveal>
