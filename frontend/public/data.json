@@ -386,26 +386,26 @@
   "vibe-projects": [
     {
       "id": 1,
-      "title": "待定项目 1",
-      "description": "此处为项目简介，通过后台编辑补充",
+      "title": "Game Infor — Steam 游戏智能信息收集agent",
+      "description": "  Game Infor 是一个由 AI 驱动的 Steam 游戏情报监控助手，能自动追踪新游趋势、畅销榜和愿望单榜单，检测排名异常，并通过 Lark/飞书推送实时预警与日报。支持榜单监控、趋势检测、排名变化图表生成和 LLM（Claude）游戏分析，帮助用户快速洞察 Steam 游戏市场动态。",
       "icon": "🤖",
-      "url": "",
+      "url": "https://github.com/LK-ghtry/Game-infor",
       "sort_order": 2
     },
     {
       "id": 2,
-      "title": "待定项目 2",
-      "description": "此处为项目简介，通过后台编辑补充",
+      "title": "AI Video Planner ——多Agent协作的视频策划工具",
+      "description": "AI Video Planner 是一个多Agent协作的视频策划工具，只需输入你的创意念头，比如想表达的主题、目标受众、视频时长、发布平台、主角形象和视觉风格等信息，即可一键生成完整的视频制作方案。系统包含七个不同的AI智能体（导演、艺术指导、角色设计、编剧、分镜师、提示词专家等），它们会依次协作，帮助你自动产出视频的核心主题、叙事策略、角色描述、详细剧本、分镜板、AI生成提示词、工具链推荐等内容。  页面还支持多种主流AI大模型（Anthropic Claude、DeepSeek、Google Gemini、OpenAI等），只需提供API Key即可选择使用。完成策划后，可导出Markdown制作方案，并可通过内置对话功能与“导演Agent”进一步迭代和优化方案。",
       "icon": "🎨",
-      "url": "",
+      "url": "https://github.com/LK-ghtry/ai-video-planner",
       "sort_order": 1
     },
     {
       "id": 3,
-      "title": "待定项目 3",
-      "description": "此处为项目简介，通过后台编辑补充",
+      "title": "QualCode AI ——一个自动化质性研究三级编码工具",
+      "description": "QualCode AI 是一款基于“三阶编码法”设计的扎根理论定性研究工具，支持开放式编码、主轴式编码和选择性编码全过程，结合了主流AI模型，实现自动文本分段、编码、归类与理论整合，适用于访谈、观察、文档等质性数据的系统分析和理论构建，目标是为定性研究者提供便捷、高效的分析工具。",
       "icon": "⚡",
-      "url": "",
+      "url": "https://github.com/LK-ghtry/project-3level-coding",
       "sort_order": 0
     }
   ],
