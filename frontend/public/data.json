@@ -3,7 +3,7 @@
     "name_cn": "",
     "name_en": "Li Guokuan",
     "title": "AI Product Operations",
-    "subtitle": "AI产品运营 / 内容运营 / 产品运营",
+    "subtitle": "内容运营 / AI产品运营 / 产品运营",
     "location": "深圳市",
     "email": "Liguokuan24@163.com",
     "phone": "13032872890",
@@ -36,7 +36,7 @@
       "category": "education",
       "title": "四川大学",
       "subtitle": "新闻与传播 · 硕士研究生",
-      "description": "",
+      "description": "GPA3.85/4.0（前15%），主要课程：新媒体概论、创意广告理论、视频传播创意与实践",
       "start_date": "2024.09",
       "end_date": "2027.06",
       "sort_order": 1,
@@ -64,7 +64,7 @@
       "category": "education",
       "title": "四川大学",
       "subtitle": "预防医学 · 本科",
-      "description": "",
+      "description": "GPA3.55/4.0，主要课程：统计学原理与概论、健康传播概论、卫生宣传与教育",
       "start_date": "2017.09",
       "end_date": "2022.06",
       "sort_order": 0,
@@ -200,20 +200,6 @@
       "sort_order": 5
     },
     {
-      "id": 5,
-      "name": "Neuroscan",
-      "category": "tools",
-      "is_marquee": true,
-      "sort_order": 4
-    },
-    {
-      "id": 4,
-      "name": "AMOS",
-      "category": "tools",
-      "is_marquee": true,
-      "sort_order": 3
-    },
-    {
       "id": 3,
       "name": "SPSS",
       "category": "tools",
@@ -277,7 +263,7 @@
     {
       "id": 3,
       "title": "音乐",
-      "description": "热爱音乐，常听电子、独立与华语流行",
+      "description": "热爱音乐，常听R&B、乡村音乐、轻摇滚",
       "icon_name": "Music",
       "icon_color": "#e60012",
       "link_url": "/music-playlist",
@@ -332,13 +318,6 @@
     "中国"
   ],
   "playlists": [
-    {
-      "id": 2,
-      "title": "通勤路上 Commute Vibes",
-      "platform": "QQ音乐",
-      "link_url": "",
-      "sort_order": 1
-    },
     {
       "id": 1,
       "title": "工作专注 Deep Focus",

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { useFetch } from '../hooks/useFetch';
@@ -77,15 +78,24 @@ export default function InterestsPage() {
                   }}>
                     {item.description}
                   </p>
-                  <a href={item.link_url || '#'} target={item.link_url?.startsWith('http') ? '_blank' : undefined}
-                    rel={item.link_url?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="btn-primary" style={{
-                      alignSelf: 'flex-start', marginTop: 'auto',
-                      opacity: item.link_url ? 1 : 0.4,
-                      pointerEvents: item.link_url ? 'auto' : 'none',
-                    }}>
-                    {item.link_text || '即将上线'} {item.link_url ? <ExternalLink size={16} /> : null}
-                  </a>
+                  {item.link_url?.startsWith('http') ? (
+                    <a href={item.link_url} target="_blank" rel="noopener noreferrer"
+                      className="btn-primary" style={{
+                        alignSelf: 'flex-start', marginTop: 'auto',
+                      }}>
+                      {item.link_text || '访问'} <ExternalLink size={16} />
+                    </a>
+                  ) : (
+                    <Link to={item.link_url || '#'}
+                      className="btn-primary" style={{
+                        alignSelf: 'flex-start', marginTop: 'auto',
+                        opacity: item.link_url ? 1 : 0.4,
+                        pointerEvents: item.link_url ? 'auto' : 'none',
+                        textDecoration: 'none',
+                      }}>
+                      {item.link_text || '即将上线'} <ExternalLink size={16} />
+                    </Link>
+                  )}
                 </div>
               </ScrollReveal>
             );
