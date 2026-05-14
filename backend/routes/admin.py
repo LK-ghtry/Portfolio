@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 from werkzeug.security import check_password_hash
-from models import db, PersonalInfo, TimelineItem, Project, Competition, Skill, Certification, Interest, TravelPhoto, Playlist, GuestbookMessage, AdminUser, Writing
+from models import db, PersonalInfo, TimelineItem, Project, Competition, Skill, Certification, Interest, TravelPhoto, Playlist, GuestbookMessage, AdminUser, Writing, VibeProject
 from datetime import timedelta
 
 admin_bp = Blueprint("admin", __name__)
@@ -106,7 +106,8 @@ def _serialize_timeline(item):
             "subtitle": item.subtitle, "description": item.description,
             "start_date": item.start_date, "end_date": item.end_date,
             "sort_order": item.sort_order, "is_current": item.is_current,
-            "badge_text": item.badge_text}
+            "badge_text": item.badge_text, "link_url": item.link_url,
+            "link_text": item.link_text}
 
 def _serialize_project(item):
     return {"id": item.id, "title": item.title, "category": item.category,
@@ -155,6 +156,12 @@ crud_routes(admin_bp, Interest, "interests", _serialize_interest, ["title"])
 crud_routes(admin_bp, TravelPhoto, "travel-photos", _serialize_travel, ["country", "image_path"])
 crud_routes(admin_bp, Playlist, "playlists", _serialize_playlist, ["title"])
 crud_routes(admin_bp, Writing, "writings", _serialize_writing, ["title", "url"])
+
+def _serialize_vibe(item):
+    return {"id": item.id, "title": item.title, "description": item.description,
+            "icon": item.icon, "url": item.url, "sort_order": item.sort_order}
+
+crud_routes(admin_bp, VibeProject, "vibe-projects", _serialize_vibe, ["title"])
 
 
 # ── Guestbook Moderation ──

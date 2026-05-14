@@ -136,6 +136,14 @@ export default function TimelineEditor() {
                 onChange={(e) => setForm((f) => ({ ...f, end_date: e.target.value }))}
                 style={{ flex: 1, padding: '0.75rem', borderRadius: 8, border: '1px solid #ddd' }} />
             </div>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <input placeholder="跳转链接 (URL 或本地文件路径如 files/xxx.pdf)" value={form.link_url || ''}
+                onChange={(e) => setForm((f) => ({ ...f, link_url: e.target.value }))}
+                style={{ flex: 2, padding: '0.75rem', borderRadius: 8, border: '1px solid #ddd' }} />
+              <input placeholder="链接文字 (如 查看详情)" value={form.link_text || ''}
+                onChange={(e) => setForm((f) => ({ ...f, link_text: e.target.value }))}
+                style={{ flex: 1, padding: '0.75rem', borderRadius: 8, border: '1px solid #ddd' }} />
+            </div>
             <button onClick={handleSave} className="btn-primary" style={{ alignSelf: 'flex-start' }}>保存</button>
           </div>
         </div>

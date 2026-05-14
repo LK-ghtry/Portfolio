@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from models import db, PersonalInfo, TimelineItem, Project, Competition
 from models import Skill, Certification, Interest, TravelPhoto, Playlist
-from models import GuestbookMessage, AdminUser, Writing
+from models import GuestbookMessage, AdminUser, Writing, VibeProject
 from werkzeug.security import generate_password_hash
 
 
@@ -174,6 +174,15 @@ def seed_if_empty():
     ]
     for w in writings:
         db.session.add(Writing(**w))
+
+    # --- Vibe Coding Projects (placeholder) ---
+    vibe_projects = [
+        {'title': '待定项目 1', 'description': '此处为项目简介，通过后台编辑补充', 'icon': '🤖', 'url': '', 'sort_order': 2},
+        {'title': '待定项目 2', 'description': '此处为项目简介，通过后台编辑补充', 'icon': '🎨', 'url': '', 'sort_order': 1},
+        {'title': '待定项目 3', 'description': '此处为项目简介，通过后台编辑补充', 'icon': '⚡', 'url': '', 'sort_order': 0},
+    ]
+    for v in vibe_projects:
+        db.session.add(VibeProject(**v))
 
     # --- Guestbook (sample) ---
     db.session.add(GuestbookMessage(

@@ -38,6 +38,8 @@ class TimelineItem(db.Model):
     sort_order = db.Column(db.Integer, default=0)
     is_current = db.Column(db.Boolean, default=False)
     badge_text = db.Column(db.String(100))
+    link_url = db.Column(db.String(500))
+    link_text = db.Column(db.String(100))
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
@@ -138,6 +140,18 @@ class GuestbookMessage(db.Model):
     is_approved = db.Column(db.Boolean, default=False)
     is_pinned = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+
+class VibeProject(db.Model):
+    __tablename__ = "vibe_projects"
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(200), nullable=False)
+    description = db.Column(db.Text)
+    icon = db.Column(db.String(10), default="🚀")
+    url = db.Column(db.String(500))
+    sort_order = db.Column(db.Integer, default=0)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 
 class Writing(db.Model):

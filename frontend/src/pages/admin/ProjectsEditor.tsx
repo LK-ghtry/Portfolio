@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Plus, Edit2, Trash2 } from 'lucide-react';
 import { useFetch } from '../../hooks/useFetch';
-import type { Project, Competition } from '../../types';
+import type { Project, Competition, VibeProject } from '../../types';
 import client from '../../api/client';
 
 function GenericEditor<T extends { id: number }>({
@@ -103,6 +103,19 @@ export default function ProjectsEditor() {
         ]}
         emptyItem={() => ({ title: '', category: 'AI/ML', short_description: '' })}
       />
+      <div style={{ marginTop: '3rem' }}>
+        <GenericEditor<VibeProject>
+          endpoint="vibe-projects"
+          title="Vibe Coding 项目"
+          fields={[
+            { key: 'title' as keyof VibeProject, label: '标题' },
+            { key: 'description' as keyof VibeProject, label: '描述' },
+            { key: 'icon' as keyof VibeProject, label: '图标 (emoji)' },
+            { key: 'url' as keyof VibeProject, label: '链接' },
+          ]}
+          emptyItem={() => ({ title: '', description: '', icon: '🚀', url: '' })}
+        />
+      </div>
       <div style={{ marginTop: '3rem' }}>
         <GenericEditor<Competition>
           endpoint="competitions"

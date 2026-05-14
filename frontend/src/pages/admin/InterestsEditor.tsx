@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Plus, Edit2, Trash2 } from 'lucide-react';
 import { useFetch } from '../../hooks/useFetch';
-import type { Interest, TravelPhoto, Playlist } from '../../types';
+import type { Interest, TravelPhoto, Playlist, Writing } from '../../types';
 import client from '../../api/client';
 
 function GenericEditor<T extends { id: number }>({
@@ -122,6 +122,19 @@ export default function InterestsEditor() {
             { key: 'caption' as keyof TravelPhoto, label: '说明文字' },
           ]}
           emptyItem={() => ({ country: '', image_path: '', caption: '' })}
+        />
+      </div>
+      <div style={{ marginTop: '3rem' }}>
+        <GenericEditor<Writing>
+          endpoint="writings"
+          title="文章写作"
+          fields={[
+            { key: 'title' as keyof Writing, label: '标题' },
+            { key: 'url' as keyof Writing, label: '链接' },
+            { key: 'description' as keyof Writing, label: '描述' },
+            { key: 'platform' as keyof Writing, label: '平台' },
+          ]}
+          emptyItem={() => ({ title: '', url: '', description: '', platform: '' })}
         />
       </div>
     </div>

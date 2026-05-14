@@ -16,6 +16,8 @@ def serialize_item(item):
         "sort_order": item.sort_order,
         "is_current": item.is_current,
         "badge_text": item.badge_text,
+        "link_url": item.link_url,
+        "link_text": item.link_text,
     }
 
 

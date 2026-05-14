@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from models import Interest, TravelPhoto, Playlist, Writing
+from models import Interest, TravelPhoto, Playlist, Writing, VibeProject
 
 interests_bp = Blueprint("interests", __name__)
 
@@ -64,3 +64,12 @@ def get_writings():
         "platform": w.platform,
         "sort_order": w.sort_order,
     } for w in items])
+
+
+@interests_bp.route("/vibe-projects")
+def get_vibe_projects():
+    items = VibeProject.query.order_by(VibeProject.sort_order.desc()).all()
+    return jsonify([{
+        "id": v.id, "title": v.title, "description": v.description,
+        "icon": v.icon, "url": v.url, "sort_order": v.sort_order,
+    } for v in items])

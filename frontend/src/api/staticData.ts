@@ -25,6 +25,7 @@ const pathMap: Record<string, string> = {
   '/playlists': 'playlists',
   '/guestbook': 'guestbook',
   '/writings': 'writings',
+  '/vibe-projects': 'vibe-projects',
   '/project-categories': 'project-categories',
 };
 

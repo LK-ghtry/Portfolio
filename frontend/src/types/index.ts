@@ -28,6 +28,8 @@ export interface TimelineItem {
   sort_order: number;
   is_current: boolean;
   badge_text: string;
+  link_url: string;
+  link_text: string;
 }
 
 export interface Project {
@@ -102,6 +104,15 @@ export interface GuestbookMessage {
   author_name: string;
   message: string;
   created_at: string;
+}
+
+export interface VibeProject {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+  url: string;
+  sort_order: number;
 }
 
 export interface Writing {

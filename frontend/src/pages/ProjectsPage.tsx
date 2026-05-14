@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { useFetch } from '../hooks/useFetch';
 import { useDragScroll } from '../hooks/useDragScroll';
-import type { Project, Competition, Skill, Certification } from '../types';
+import type { Project, Competition, Skill, Certification, VibeProject } from '../types';
 import ScrollReveal from '../components/layout/ScrollReveal';
 import LoadingSpinner from '../components/shared/LoadingSpinner';
 
@@ -14,6 +14,7 @@ export default function ProjectsPage() {
   const { data: competitions, loading: cLoading } = useFetch<Competition[]>('/competitions');
   const { data: skills, loading: sLoading } = useFetch<Skill[]>('/skills');
   const { data: certifications, loading: certLoading } = useFetch<Certification[]>('/certifications');
+  const { data: vibeProjects } = useFetch<VibeProject[]>('/vibe-projects');
 
   if (pLoading || cLoading || sLoading || certLoading) return <LoadingSpinner />;
 
@@ -207,44 +208,61 @@ export default function ProjectsPage() {
         </>
       )}
 
-      {/* Certifications */}
-      {certifications && certifications.length > 0 && (
+      {/* Vibe Coding Projects */}
+      {vibeProjects && vibeProjects.length > 0 && (
         <>
           <ScrollReveal>
             <h2 className="section-title-projects" style={{
               textAlign: 'center', color: 'var(--heading-color)', margin: '4rem 0 3rem',
               fontFamily: "'Outfit', 'Noto Sans SC', 'Inter', 'Microsoft YaHei', sans-serif", fontSize: '2.5rem', fontWeight: 800,
             }}>
-              证书与荣誉
+              Vibe Coding 项目
             </h2>
           </ScrollReveal>
-          <div className="certs-grid" style={{
+          <div style={{
             flexDirection: 'column', gap: '1rem', maxWidth: 800, margin: '0 auto', display: 'flex',
           }}>
-            {certifications.map((cert) => (
-              <ScrollReveal key={cert.id} delay={0.1}>
-                <div className="cert-card" style={{
-                  background: 'var(--card-bg)', border: '1px solid transparent', borderRadius: 16,
-                  alignItems: 'center', gap: '1.5rem', padding: '1.5rem 2rem',
-                  transition: 'transform 0.2s, box-shadow 0.2s', display: 'flex',
-                }}>
-                  <div className="cert-icon" style={{ flexShrink: 0, fontSize: '2rem' }}>{cert.icon}</div>
-                  <div className="cert-info" style={{ flexDirection: 'column', gap: '0.25rem', display: 'flex' }}>
-                    <div className="cert-title" style={{ color: 'var(--heading-color)', fontSize: '1rem', fontWeight: 700 }}>
-                      {cert.title}
+            {vibeProjects.map((vp, idx) => (
+              <ScrollReveal key={vp.id} delay={idx * 0.1}>
+                <a
+                  href={vp.url || '#'}
+                  target={vp.url ? '_blank' : undefined}
+                  rel={vp.url ? 'noopener noreferrer' : undefined}
+                  onClick={!vp.url ? (e) => e.preventDefault() : undefined}
+                  style={{
+                    background: 'var(--card-bg)', border: '1px solid transparent', borderRadius: 16,
+                    alignItems: 'center', gap: '1.5rem', padding: '1.5rem 2rem',
+                    transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)', display: 'flex',
+                    textDecoration: 'none', color: 'inherit',
+                    cursor: vp.url ? 'pointer' : 'default',
+                  }}
+                  className="cert-card"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px) scale(1.02)';
+                    e.currentTarget.style.boxShadow = '0 12px 32px rgba(66,107,194,0.18)';
+                    e.currentTarget.style.borderColor = 'var(--accent-color)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                    e.currentTarget.style.boxShadow = 'none';
+                    e.currentTarget.style.borderColor = 'transparent';
+                  }}
+                >
+                  <div style={{ flexShrink: 0, fontSize: '2.2rem' }}>{vp.icon}</div>
+                  <div style={{ flexDirection: 'column', gap: '0.25rem', display: 'flex', flex: 1 }}>
+                    <div style={{ color: 'var(--heading-color)', fontSize: '1.05rem', fontWeight: 700 }}>
+                      {vp.title}
                     </div>
-                    {cert.issuer && (
-                      <div className="cert-issuer" style={{ color: 'var(--accent-color)', fontSize: '0.9rem', fontWeight: 500 }}>
-                        {cert.issuer}
-                      </div>
-                    )}
-                    {cert.date && (
-                      <div className="cert-date" style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>
-                        {cert.date}
+                    {vp.description && (
+                      <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+                        {vp.description}
                       </div>
                     )}
                   </div>
-                </div>
+                  {vp.url && (
+                    <ExternalLink size={18} style={{ color: 'var(--accent-color)', flexShrink: 0, opacity: 0.6 }} />
+                  )}
+                </a>
               </ScrollReveal>
             ))}
           </div>

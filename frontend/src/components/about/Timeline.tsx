@@ -1,3 +1,4 @@
+import { ExternalLink } from 'lucide-react';
 import { useFetch } from '../../hooks/useFetch';
 import type { TimelineItem as TItem } from '../../types';
 import ScrollReveal from '../layout/ScrollReveal';
@@ -84,6 +85,21 @@ export default function Timeline() {
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', whiteSpace: 'pre-wrap' }}>
                           {item.description}
                         </p>
+                      )}
+                      {item.link_url && (
+                        <a
+                          href={item.link_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
+                            marginTop: '0.5rem', color: 'var(--accent-color)',
+                            fontSize: '0.9rem', fontWeight: 600,
+                          }}
+                        >
+                          <ExternalLink size={14} />
+                          {item.link_text || '查看详情'}
+                        </a>
                       )}
                     </div>
                   </div>
