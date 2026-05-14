@@ -73,9 +73,16 @@ function GenericEditor<T extends { id: number }>({
             {fields.map(({ key, label }) => (
               <div key={String(key)}>
                 <label style={{ fontWeight: 600, fontSize: '0.9rem', display: 'block', marginBottom: '0.25rem' }}>{label}</label>
-                <input type="text" value={String(editItem[key] || '')}
-                  onChange={(e) => setEditItem((f) => f ? { ...f, [key]: e.target.value } : null)}
-                  style={{ width: '100%', padding: '0.75rem', borderRadius: 8, border: '1px solid #ddd' }} />
+                {fields.find((f) => f.key === key)?.type === 'textarea' ? (
+                  <textarea value={String(editItem[key] || '')}
+                    onChange={(e) => setEditItem((f) => f ? { ...f, [key]: e.target.value } : null)}
+                    rows={4}
+                    style={{ width: '100%', padding: '0.75rem', borderRadius: 8, border: '1px solid #ddd', resize: 'vertical' }} />
+                ) : (
+                  <input type="text" value={String(editItem[key] || '')}
+                    onChange={(e) => setEditItem((f) => f ? { ...f, [key]: e.target.value } : null)}
+                    style={{ width: '100%', padding: '0.75rem', borderRadius: 8, border: '1px solid #ddd' }} />
+                )}
               </div>
             ))}
             <button onClick={handleSave} className="btn-primary" style={{ alignSelf: 'flex-start' }}>保存</button>
@@ -96,7 +103,8 @@ export default function ProjectsEditor() {
         fields={[
           { key: 'title' as keyof Project, label: '标题' },
           { key: 'category' as keyof Project, label: '分类' },
-          { key: 'short_description' as keyof Project, label: '简短描述' },
+          { key: 'short_description' as keyof Project, label: '卡片简短描述（点开前显示）', type: 'textarea' },
+          { key: 'full_description' as keyof Project, label: '完整介绍（点开后显示）', type: 'textarea' },
           { key: 'image_path' as keyof Project, label: '图片路径' },
           { key: 'github_url' as keyof Project, label: 'GitHub URL' },
           { key: 'live_url' as keyof Project, label: '在线链接' },
