@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>实习视频 - 马上消费金融</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans SC', 'Inter', 'Microsoft YaHei', sans-serif;
+      background: #0f0f0f; color: #fff;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      min-height: 100vh; padding: 2rem; gap: 2rem;
+    }
+    h1 { font-size: 1.8rem; font-weight: 700; color: #e0e0e0; }
+    .video-container {
+      background: #1a1a1a; border-radius: 16px; padding: 1.5rem;
+      max-width: 720px; width: 100%;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .video-container h2 {
+      font-size: 1.1rem; margin-bottom: 1rem; color: #aaa;
+    }
+    video {
+      width: 100%; border-radius: 8px; outline: none;
+    }
+    .back-link {
+      color: #888; text-decoration: none; font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #fff; }
+  </style>
+</head>
+<body>
+  <h1>马上消费金融 — 实习记录</h1>
+  <div class="video-container">
+    <h2>上班多喝水</h2>
+    <video controls playsinline>
+      <source src="上班多喝水.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="video-container">
+    <h2>上班的感受</h2>
+    <video controls playsinline>
+      <source src="上班的感受.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <a class="back-link" href="javascript:history.back()">← 返回</a>
+</body>
+</html>
