@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { useFetch } from '../hooks/useFetch';
 import { useDragScroll } from '../hooks/useDragScroll';
-import type { Project, Competition, Skill, Certification, VibeProject } from '../types';
+import type { Project, Competition, Skill, VibeProject } from '../types';
 import ScrollReveal from '../components/layout/ScrollReveal';
 import LoadingSpinner from '../components/shared/LoadingSpinner';
 
@@ -13,10 +13,9 @@ export default function ProjectsPage() {
   const { data: projects, loading: pLoading } = useFetch<Project[]>('/projects');
   const { data: competitions, loading: cLoading } = useFetch<Competition[]>('/competitions');
   const { data: skills, loading: sLoading } = useFetch<Skill[]>('/skills');
-  const { data: certifications, loading: certLoading } = useFetch<Certification[]>('/certifications');
   const { data: vibeProjects } = useFetch<VibeProject[]>('/vibe-projects');
 
-  if (pLoading || cLoading || sLoading || certLoading) return <LoadingSpinner />;
+  if (pLoading || cLoading || sLoading) return <LoadingSpinner />;
 
   return (
     <div style={{ paddingBottom: '6rem' }}>
